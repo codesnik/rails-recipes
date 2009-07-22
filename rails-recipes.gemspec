@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rails-recipes}
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alexey 'codesnik' Trofimenko"]
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/rails-recipes.rb",
      "lib/rails-recipes/console.rb",
+     "rails-recipes.gemspec",
      "test/rails-recipes_test.rb",
      "test/test_helper.rb"
   ]
