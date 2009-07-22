@@ -5,38 +5,47 @@ on first server in a cluster
 
 == Synopsis
 
-  # starts script/console on the first :app server in currently released directory
-  # be careful with your production server data - it's the power under your fingers now!
+starts script/console on the first :app server in currently released directory
+be careful with your production server data - it's the power under your fingers now!
 
   cap rails:console
 
-  # starts script/dbconsole, still on the :app server, but connected to a
-  # right database, probably
+starts script/dbconsole, still on the :app server, but connected to a
+right database, probably
 
   cap rails:dbconsole
 
-  # even this should work, providing you authenticate via ssh key
-  # and you're not using ssh gateway (breaks pipeline sometimes)
+even this should work, providing you authenticate via ssh key
+and you're not using ssh gateway (breaks pipeline sometimes)
 
   cap rails:dbconsole < sqldump.sql
 
-  # sorry, haven't figured how to provide additional arguments for rake yet.
+sorry, haven't figured how to provide additional arguments for rake yet.
 
   cap rails:rake task=db:abort_if_pending_migrations
 
-  # do not try it at work
-  cap rails:runner cmd='User.delete_all'
+(NOT DONE YET) do not try it at work
 
-  # using some multistage deployment scheme (capistrano/ext/multistage or something homebrew)?
-  # this should work too right from the box
+  (NOT DONE YET) cap rails:runner cmd='User.delete_all'
+
+using some multistage deployment scheme (capistrano/ext/multistage or something homebrew)?
+this should work too right from the box
 
   cap staging rails:console
 
 == Installation
 
-TODO
+  sudo gem install codesnik-rails-recipes --source=http://gems.github.com
+
+then stick
+
+  require 'rails-recipes'
+
+at the end of your Capfile or ~/.caprc
 
 == Configuration
+
+TODO
 
 == Hidden details
 
