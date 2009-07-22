@@ -1,7 +1,58 @@
 = rails-recipes
 
-Description goes here.
+capistrano recipes for invoking rails script/console, script/dbconsole, rake etc.
+on first server in a cluster
+
+== Synopsis
+
+  # starts script/console on the first :app server in currently released directory
+  # be careful with your production server data - it's the power under your fingers now!
+
+  cap rails:console
+
+  # starts script/dbconsole, still on the :app server, but connected to a
+  # right database, probably
+
+  cap rails:dbconsole
+
+  # even this should work, providing you authenticate via ssh key
+  # and you're not using ssh gateway (breaks pipeline sometimes)
+
+  cap rails:dbconsole < sqldump.sql
+
+  # sorry, haven't figured how to provide additional arguments for rake yet.
+
+  cap rails:rake task=db:abort_if_pending_migrations
+
+  # do not try it at work
+  cap rails:runner cmd='User.delete_all'
+
+  # using some multistage deployment scheme (capistrano/ext/multistage or something homebrew)?
+  # this should work too right from the box
+
+  cap staging rails:console
+
+== Installation
+
+TODO
+
+== Configuration
+
+== Hidden details
+
+It doesn't use ruby net/ssh2 library for interactive script/console and script/dbconsole
+but invokes real 'ssh' executable so that readline interface works as expected.
+Still this means that all the subtile differences of parsing ~/.ssh/config and other files
+between openssh executables and net/ssh2 apply here.
+
+Used on Ubuntu and MacOS X, for deployment on Gentoo, Fedora, FreeBSD
+
+Sorry, no tests yet, not that there's much code you can actually test here
+
+== Suggestions, feature requests, bugreports
+
+...are always welcome.
 
 == Copyright
 
-Copyright (c) 2009 codesnik. See LICENSE for details.
+Copyright (c) 2009 Alexey 'codesnik' Trofimenko. See LICENSE for details.

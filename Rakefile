@@ -5,10 +5,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "rails-recipes"
-    gem.summary = %Q{TODO}
+    gem.summary = %Q{capistrano recipes for invoking script/console, script/dbconsole and rake on a rails app server}
     gem.email = "aronaxis@gmail.com"
     gem.homepage = "http://github.com/codesnik/rails-recipes"
-    gem.authors = ["codesnik"]
+    gem.authors = ["Alexey 'codesnik' Trofimenko"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 
