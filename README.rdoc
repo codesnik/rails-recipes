@@ -1,0 +1,7 @@
+= rails-recipes
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 codesnik. See LICENSE for details.
